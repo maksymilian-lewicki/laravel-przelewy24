@@ -653,7 +653,7 @@ class Transfers24
             throw new RequestException('Empty email or amount');
         }
 
-        $this->transaction_id = uniqid();
+        $this->transaction_id = Str::random(32);
 
         $response = $this->transfers24->init($this->setFields());
 
